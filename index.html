@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HACKAI</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            HACK<span>AI</span>
+        </div>
+
+        <div class="nav-buttons">
+            <button id="loginBtn">LOGIN</button>
+            <button id="signupBtn">SIGN UP</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="landing">
+
+            <div class="tag">AI FOR BUILDERS</div>
+
+            <h1>
+                THINK.<br>
+                <span>BUILD.</span><br>
+                CREATE.
+            </h1>
+
+            <p>
+                HACKAI is an AI assistant for programming,
+                technology and cybersecurity learning.
+            </p>
+
+            <div class="hero-buttons">
+                <button id="heroSignup">CREATE ACCOUNT</button>
+                <button id="heroLogin">LOGIN</button>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        HACKAI © 2026
+    </footer>
+
+    <!-- Authentication window -->
+    <div id="authModal" class="auth-modal">
+
+        <div class="auth-box">
+
+            <button id="closeAuth" class="close-btn">×</button>
+
+            <div class="auth-logo">HACK<span>AI</span></div>
+
+            <h2 id="authTitle">CREATE ACCOUNT</h2>
+
+            <p id="authDescription">
+                Create your HACKAI account.
+            </p>
+
+            <form id="authForm">
+
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Password"
+                    minlength="6"
+                    required
+                >
+
+                <button type="submit" id="authSubmit">
+                    CREATE ACCOUNT
+                </button>
+
+            </form>
+
+            <p id="authMessage"></p>
+
+            <button id="switchAuth" class="switch-btn">
+                Already have an account? LOGIN
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

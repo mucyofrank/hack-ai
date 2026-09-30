@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #020403;
+    color: white;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(rgba(0, 255, 100, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 100, 0.035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 50px;
+
+    border-bottom: 1px solid #103d22;
+
+    background: rgba(2, 4, 3, 0.9);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #00ff66;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    font-family: "Courier New", monospace;
+    cursor: pointer;
+}
+
+.nav-buttons button {
+    padding: 9px 18px;
+
+    background: transparent;
+
+    border: 1px solid #00ff66;
+
+    color: #00ff66;
+}
+
+.nav-buttons button:hover {
+    background: #00ff66;
+    color: #020403;
+}
+
+.landing {
+    width: min(900px, 90%);
+    margin: auto;
+
+    padding-top: 120px;
+}
+
+.tag {
+    color: #00ff66;
+    font-size: 13px;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(55px, 9vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+h1 span {
+    color: #00ff66;
+    text-shadow: 0 0 25px rgba(0, 255, 100, 0.35);
+}
+
+.landing p {
+    margin-top: 35px;
+
+    max-width: 600px;
+
+    color: #829889;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.hero-buttons button {
+    padding: 14px 24px;
+
+    border: 1px solid #00ff66;
+
+    font-weight: bold;
+}
+
+#heroSignup {
+    background: #00ff66;
+    color: #020403;
+}
+
+#heroSignup:hover {
+    background: white;
+}
+
+#heroLogin {
+    background: transparent;
+    color: #00ff66;
+}
+
+#heroLogin:hover {
+    background: #00ff66;
+    color: #020403;
+}
+
+footer {
+    width: 90%;
+
+    margin: 100px auto 25px;
+
+    color: #3f624b;
+
+    font-size: 11px;
+}
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    .landing {
+        padding-top: 80px;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .nav-buttons button {
+        padding: 7px 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 220px;
+    }
+}
+/* AUTH MODAL */
+
+.auth-modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    z-index: 100;
+}
+
+.auth-modal.active {
+    display: flex;
+}
+
+.auth-box {
+    position: relative;
+
+    width: min(420px, 90%);
+
+    padding: 40px;
+
+    background: #050906;
+
+    border: 1px solid #00ff66;
+
+    box-shadow:
+        0 0 30px rgba(0, 255, 100, 0.15);
+
+    text-align: center;
+}
+
+.auth-logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.auth-logo span {
+    color: #00ff66;
+}
+
+.auth-box h2 {
+    color: white;
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+.auth-box > p {
+    color: #6f8877;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #00ff66;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+#authForm {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+#authForm input {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #020403;
+
+    border: 1px solid #164d2b;
+
+    color: white;
+
+    font-family: "Courier New", monospace;
+
+    outline: none;
+}
+
+#authForm input:focus {
+    border-color: #00ff66;
+
+    box-shadow:
+        0 0 10px rgba(0, 255, 100, 0.15);
+}
+
+#authSubmit {
+    padding: 14px;
+
+    background: #00ff66;
+
+    border: none;
+
+    color: #020403;
+
+    font-family: "Courier New", monospace;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#authSubmit:hover {
+    background: white;
+}
+
+#authMessage {
+    margin-top: 15px;
+
+    color: #00ff66;
+
+    font-size: 12px;
+}
+
+.switch-btn {
+    margin-top: 20px;
+
+    background: transparent;
+
+    border: none;
+
+    color: #6fdb91;
+
+    font-family: "Courier New", monospace;
+
+    cursor: pointer;
+}
+
+.switch-btn:hover {
+    color: white;
+}
